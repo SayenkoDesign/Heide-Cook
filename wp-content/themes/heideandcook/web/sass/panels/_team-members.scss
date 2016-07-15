@@ -1,0 +1,105 @@
+.member.info {
+  a {
+    position: relative;
+    display: block;
+    margin-bottom: .5rem;
+    &:hover::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(200, 200, 200, 0.5);
+      z-index: 1;
+    }
+  }
+  img {
+    max-width: none;
+    width: 100%;
+  }
+  h3 {
+    margin-bottom: rem-calc(4px);
+    font-size: rem-calc(26px);
+  }
+  h6.orange {
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+  }
+  p {
+    font-size: rem-calc(18px);
+    color: #636466;
+  }
+  p.green {
+    color: $dark-green;
+    margin-bottom: .25rem;
+  }
+}
+.team-members {
+  .heading h2 {
+    margin: rem-calc(40px) 0;
+    text-transform: uppercase;
+  }
+  .close {
+    display: block;
+    position: absolute;
+    background-image: url("../images/close-icon.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    height: rem-calc(30px);
+    width: rem-calc(30px);
+    top: rem-calc(25px);
+    right: rem-calc(25px);
+    &:hover {
+      background-image: url("../images/close-icon-hover.png");
+      transition: .25s;
+    }
+  }
+  .member-details {
+    background-color: $light-gray;
+    position: relative;
+    margin: 2.5rem 0;
+    .member {
+      position: relative;
+      display: none;
+      padding: rem-calc(40px) 0;
+      &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 2.5rem solid transparent;
+        border-right: 2.5rem solid transparent;
+        border-bottom: 2.5rem solid $light-gray;
+        position: absolute;
+        top: -2.5rem;
+      }
+      &:nth-child(3n+1)::before {
+        left: calc(33%/2 - 2.5rem/2 - 20px);// 1/2 widthof column - 1/2 of border - gutter
+      }
+      &:nth-child(3n+2)::before {
+        left: calc(50% - 2.5rem/2 - 20px);
+      }
+      &:nth-child(3n+3)::before {
+        right: calc(15% - 2.5rem/2 - 20px);
+      }
+    }
+  }
+}
+.member.reveal {
+  position: relative;
+  .close {
+    display: block;
+    position: absolute;
+    background-image: url("../images/close-icon.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    height: rem-calc(30px);
+    width: rem-calc(30px);
+    top: rem-calc(25px);
+    right: rem-calc(25px);
+    &:hover {
+      background-image: url("../images/close-icon-hover.png");
+      transition: .25s;
+    }
+  }
+}

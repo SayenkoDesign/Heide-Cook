@@ -47,47 +47,6 @@
     }
   }
 
-  .accordion {
-    background: none;
-    color: $orange;
-    .accordion-title::before {
-      content: url("../images/expand.png");
-      left: -35px;
-      top: 1.25rem;
-    }
-    .is-active .accordion-title::before {
-      content: url("../images/expand-open.png");
-    }
-  }
-
-  a.accordion-title {
-    color: $orange;
-    font-size: rem-calc(18px);
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-left: rem-calc(30px);
-    padding: .8rem .5rem;
-    border: none !important;
-    background-color: transparent;
-    line-height: 1.5;
-    &:hover {
-      background-color: transparent;
-    }
-  }
-
-  .accordion-content {
-    position: relative;
-    background: none;
-    color: $dark-gray;
-    padding: 0px;
-    padding-left: 1rem;
-    border: none !important;
-
-    p {
-      margin: 0px rem-calc(30px) rem-calc(20px) rem-calc(22px);
-    }
-  }
-
   &::before {
     top: 0;
     left: 50%;

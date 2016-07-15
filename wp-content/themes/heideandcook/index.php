@@ -39,6 +39,9 @@ function handle_content_rows($twig, &$data) {
             case 'horizontal_menu':
                 $flexibleContent[] = $twig->render('panels/horizontal-menu.html.twig', $data);
                 break;
+            case 'team_members':
+                $flexibleContent[] = $twig->render('panels/team-members.html.twig', $data);
+                break;
             default:
                 throw new Exception('Could not render layout for '.$layout);
                 break;
