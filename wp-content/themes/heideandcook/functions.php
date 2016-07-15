@@ -89,10 +89,10 @@ add_action('init', function() {
         'mobile_menu' => 'Mobile Menu',
     ]);
 
-    add_image_size('slider', 500, 332, true);
+    add_image_size('slider', 680, 450, true);
     add_image_size('header', 1400, 400, true);
-    add_image_size('team_member', 280, 330, true);
     add_image_size('case_teasers', 680, 9999, false);
+    add_image_size('team_member', 650, 760, true);
 
     if(function_exists('acf_add_options_page')) {
         acf_add_options_page([

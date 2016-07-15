@@ -53,7 +53,9 @@
     .employee {
         margin-bottom: 1rem;
         img {
+            max-width: none;
             margin-bottom: .5rem;
+            width: 100%;
         }
         h3 {
             margin-bottom: rem-calc(4px);
