@@ -34,32 +34,17 @@ HTML;
 //Stylesheets and scriptes
 add_action('wp_enqueue_scripts', function() {
     wp_register_style( 'Cabin', 'https://fonts.googleapis.com/css?family=Cabin' );
-    wp_register_style( 'Raleway', 'https://fonts.googleapis.com/css?family=Raleway:400,700' );
-    wp_register_style( 'Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700' );
-    wp_register_style( 'slick-css', get_template_directory_uri() . '/src/slick/slick/slick.css' );
-    wp_register_style( 'slick-theme-css', get_template_directory_uri() . '/src/slick/slick/slick-theme.css' );
-    wp_register_style( 'fancybox-css', get_template_directory_uri() . '/src/fancyBox/source/jquery.fancybox.css' );
-    wp_register_style( 'app', get_template_directory_uri() . '/web/stylesheets/app.css',  [
-        'Cabin',
-        'Raleway',
-        'Montserrat',
-        'slick-css',
-        'slick-theme-css',
-        'fancybox-css'
-    ] );
+    wp_register_style( 'app', get_template_directory_uri() . '/web/stylesheets/app.min.css',  [
+        'Cabin'
+    ]);
 
-    wp_register_script( 'sharethis', 'http://w.sharethis.com/button/buttons.js' );
-    wp_register_script( 'youtube', 'http://www.youtube.com/player_api' );
-    wp_register_script( 'slick', get_template_directory_uri() . '/src/slick/slick/slick.js', ['jquery'] );
-    wp_register_script( 'fancybox', get_template_directory_uri() . '/src/fancyBox/source/jquery.fancybox.pack.js', ['jquery'] );
-    wp_register_script( 'fancybox-media', get_template_directory_uri() . '/src/fancyBox/source/helpers/jquery.fancybox-media.js', ['jquery']);
-    wp_register_script( 'app_script', get_template_directory_uri() . '/web/scripts-min/app.min.js', ['sharethis', 'youtube', 'slick', 'fancybox', 'fancybox-media'] );
+    wp_register_script('sharethis', 'http://w.sharethis.com/button/buttons.js', [], false, true);
+    wp_register_script('youtube', 'http://www.youtube.com/player_api', [], false, true);
+    wp_register_script('app_script', get_template_directory_uri() . '/web/scripts-min/app.min.js', ['jquery', 'sharethis', 'youtube'], false, true);
 
-    wp_enqueue_style( 'app' );
-    wp_enqueue_script( 'sharethis' );
-    wp_enqueue_script( 'slick' );
-    wp_enqueue_script( 'fancybox' );
-    wp_enqueue_script( 'app_script' );
+    wp_enqueue_style('app');
+    wp_enqueue_script('sharethis');
+    wp_enqueue_script('app_script');
 });
 
 add_action('init', function() {
