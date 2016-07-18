@@ -17,7 +17,10 @@
   }
   .service-icon {
     height: rem-calc(100px);
-    margin-bottom: 1.5rem;;
+    margin-bottom: 1.5rem;
+  }
+  ul.no-bullet {
+    margin-bottom: rem-calc(40px);
   }
   h6 {
     text-transform: uppercase;
