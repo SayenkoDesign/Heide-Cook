@@ -9,7 +9,8 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     notify       = require('gulp-notify'),
     watch        = require('gulp-watch'),
-    livereload   = require('gulp-livereload');
+    livereload   = require('gulp-livereload'),
+    cleanCSS     = require('gulp-clean-css');
 
 var options = {
     images: {
@@ -22,6 +23,9 @@ var options = {
     },
     scripts: {
         src: [
+            'src/slick/slick/slick.js',
+            'src/fancyBox/source/jquery.fancybox.pack.js',
+            '/src/fancyBox/source/helpers/jquery.fancybox-media.js',
             'web/libs/foundation-sites/dist/foundation.js',
             'web/scripts/app.js'
         ],
@@ -36,6 +40,16 @@ var options = {
             'web/libs/foundation-sites/scss'
         ],
         sourceComments: true
+    },
+    css: {
+        src: [
+            'src/slick/slick/slick.css',
+            'src/slick/slick/slick-theme.css',
+            'src/fancyBox/source/jquery.fancybox.css',
+            'web/stylesheets/app.css'
+        ],
+        dir: 'web/stylesheets',
+        dist: 'app.min.css'
     }
 };
 
@@ -48,6 +62,7 @@ gulp.task('default', [
     'images',
     'scripts',
     'sass',
+    'css',
     'watch'
 ]);
 
@@ -74,6 +89,14 @@ gulp.task('scripts', function(){
         .pipe(livereload());
 });
 
+gulp.task('css', function(){
+    gulp.src(options.css.src).pipe(plumber(plumberErrorHandler))
+        .pipe(concat(options.css.dist))
+        .pipe(cleanCSS({}))
+        .pipe(gulp.dest(options.css.dir))
+        .pipe(livereload());
+});
+
 gulp.task('sass', function(){
     gulp.src(options.styles.src).pipe(plumber(plumberErrorHandler))
         .pipe(sass({
@@ -93,4 +116,5 @@ gulp.task('watch', function(){
     gulp.watch(options.images.src, ['images']);
     gulp.watch(options.scripts.src, ['scripts']);
     gulp.watch(options.styles.src, ['sass']);
+    gulp.watch(options.css.src, ['css']);
 });

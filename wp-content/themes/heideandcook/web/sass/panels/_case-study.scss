@@ -1,5 +1,11 @@
 .case-study {
   padding: rem-calc(60px) 0;
+  .large-8 img {
+    margin-bottom: rem-calc(30px);
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+  }
   .details {
     margin-bottom: rem-calc(80px);
     h4 {

@@ -39,7 +39,7 @@ jQuery(document).ready(function(){
     function onPlayerReady(event) {
         event.target.playVideo();
     }
-
+    
     // Fires when the player's state changes.
     function onPlayerStateChange(event) {
         // Go to the next video after the current one is finished playing
@@ -76,7 +76,7 @@ jQuery(document).ready(function(){
       }
   });
 
-  jQuery(".fancybox").fancybox({
+    jQuery(".fancybox").fancybox({
     helpers: {
         title: {
             type: 'outside',
@@ -93,11 +93,44 @@ jQuery(document).ready(function(){
     "scrolling": "no",
     "maxWidth" : "600px",
     "fitToView": false
-  });
+    });
 
     jQuery(".contact-scroll").click(function() {
         jQuery('html, body').animate({
             scrollTop: jQuery("#contact-form").offset().top
         }, 2000);
     });
+
+    jQuery('.team-members .member > a.hide-for-small-only').on("click", function(e){
+        var elem = jQuery('#' + jQuery(this).attr('data-toggle'));
+
+        if(elem.is(':visible')) {
+            elem.slideToggle();
+            e.preventDefault();
+            e.defaultPrevented;
+            return false;
+        }
+
+        var visible = jQuery('.member-details .member:visible');
+        if(visible.length) {
+            visible.slideToggle(function () {
+                elem.slideToggle();
+            });
+            e.preventDefault();
+            e.defaultPrevented;
+            return false;
+        }
+
+        elem.slideToggle();
+        e.preventDefault();
+        e.defaultPrevented;
+        return false;
+    });
+
+    jQuery('.member-details .member a.close').on("click", function(e){
+        jQuery(this).parent('.member').slideToggle();
+        e.preventDefault();
+        e.defaultPrevented;
+        return false;
+    })
 });

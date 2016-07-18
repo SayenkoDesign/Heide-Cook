@@ -23,9 +23,12 @@ $fa-font-path: "../libs/font-awesome/fonts";
 @import "panels/slider";
 @import "panels/content-services";
 @import "panels/why-choose-us";
+@import "panels/team-members";
 
 select {
-  appearance: caret;
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  border: 1px solid #a7a7a7;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 }
 
 .no-js .top-bar {
@@ -39,5 +42,47 @@ select {
 
   .no-js .title-bar {
     display: none;
+  }
+}
+
+
+.accordion {
+  background: none;
+  color: $orange;
+  .accordion-title::before {
+    content: url("../images/expand.png");
+    left: -35px;
+    top: 1.25rem;
+  }
+  .is-active .accordion-title::before {
+    content: url("../images/expand-open.png");
+  }
+}
+
+a.accordion-title {
+  color: $orange;
+  font-size: rem-calc(18px);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: rem-calc(30px);
+  padding: .8rem .5rem;
+  border: none !important;
+  background-color: transparent !important;
+  line-height: 1.5;
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+.accordion-content {
+  position: relative;
+  background: none;
+  color: $dark-gray;
+  padding: 0;
+  padding-left: 1rem;
+  border: none !important;
+
+  p {
+    margin: 0 rem-calc(30px) rem-calc(20px) rem-calc(24px);
   }
 }
