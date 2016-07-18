@@ -11,7 +11,7 @@
     background-image: url("../images/close-icon-hover.png");
     transition: .25s;
 }
-.fancybox-wrap {
+.fancybox-wrap.fancybox-type-inline.fancybox-opened {
     border-top: rem-calc(10px) solid $dark-green;
     border-radius: 0;
     font-size: rem-calc(15px);
