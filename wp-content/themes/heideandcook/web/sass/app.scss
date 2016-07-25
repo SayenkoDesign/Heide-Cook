@@ -45,7 +45,6 @@ select {
   }
 }
 
-
 .accordion {
   background: none;
   color: $orange;
@@ -85,4 +84,8 @@ a.accordion-title {
   p {
     margin: 0 rem-calc(30px) rem-calc(20px) rem-calc(24px);
   }
+}
+
+.content-404 {
+  padding: 4rem 0;
 }

@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__.'/App/bootstrap.php';
-require_once __DIR__.'/src/functions.php';
 global $container;
 
 // google analytics
@@ -41,6 +40,13 @@ add_action('wp_enqueue_scripts', function() {
     wp_register_script('sharethis', 'http://w.sharethis.com/button/buttons.js', [], false, true);
     wp_register_script('youtube', 'http://www.youtube.com/player_api', [], false, true);
     wp_register_script('app_script', get_template_directory_uri() . '/web/scripts-min/app.min.js', ['jquery', 'sharethis', 'youtube'], false, true);
+
+
+    wp_localize_script('app_script', 'SP', array(
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'is_category' => is_category(),
+        'cat' => get_query_var('cat'),
+    ));
 
     wp_enqueue_style('app');
     wp_enqueue_script('sharethis');
@@ -97,3 +103,12 @@ function my_admin_bar_init() {
     remove_action('wp_head', '_admin_bar_bump_cb');
 }
 add_action('admin_bar_init', 'my_admin_bar_init');
+
+// ajax script
+add_action( 'wp_ajax_nopriv_post_love_add_love', 'post_love_add_love' );
+add_action( 'wp_ajax_post_love_add_love', 'post_love_add_love' );
+
+function post_love_add_love() {
+    require_once __DIR__.'/ajax.php';
+    die();
+}

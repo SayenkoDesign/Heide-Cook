@@ -84,6 +84,7 @@
 #main-menu {
   position: relative;
   z-index: 2;
+  height: auto !important;
   .sticky {
     margin-top: 0 !important;
     width: 100%;
@@ -214,5 +215,11 @@
   }
   @include breakpoint(medium only) {
     display: none !important;
+  }
+}
+.menu-spacer {
+  height: rem-calc(120px);
+  @include breakpoint(large) {
+    height: rem-calc(104px);
   }
 }

@@ -19,7 +19,7 @@
                                 <h3 class="green-header">{{ member.name }}</h3>
                                 <h6 class="orange">{{ member.position }}</h6>
                                 <p class="green">{{ member.email }}</p>
-                                <p>{{ member.number }}</p>
+                                <p><a href="tel:{{ member.number|preg_replace('/[^0-9,]/', '') }}">{{ member.number }}</a></p>
                             </div>
                         </div>
                     {% endif %}
@@ -51,7 +51,7 @@
                                 <h3 class="green-header">{{ member.name }}</h3>
                                 <h6 class="orange">{{ member.position }}</h6>
                                 <p class="green">{{ member.email }}</p>
-                                <p>{{ member.number }}</p>
+                                <p><a href="tel:{{ member.number|preg_replace('/[^0-9,]/', '') }}">{{ member.number }}</a></p>
                             </div>
                             <h2 class="orange">Professional Bio</h2>
                             {{ member.professional_bio }}

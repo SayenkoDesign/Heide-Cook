@@ -4,7 +4,7 @@
 {% block header %}
     <div class="header-bar">
         <div class="row column">
-            <h1>{{ SP.WordPress.Title()|trim(' - Heide and Cook') }}</h1>
+            <h1>{{ SP.WordPress.Title()|preg_replace('/ - Heide and Cook$/') }}</h1>
         </div>
     </div>
 {% endblock %}
@@ -15,12 +15,14 @@
             {% if not teasers|length %}
                 <h2>No results Found</h2>
             {% endif %}
-            {% for teaser in teasers %}
-                {{ teaser }}
-            {% endfor %}
-            {% if teasers|length == 10 %}
+            <div class="posts">
+                {% for teaser in teasers %}
+                    {{ teaser }}
+                {% endfor %}
+            </div>
+            {% if teasers|length >= SP.WordPress.getOption('posts_per_page') %}
                 <div class="more-posts">
-                    <a href="" id="load-more" class="dark-green hollow button">Load More</a>
+                    <a href="#" id="load-more-posts" class="dark-green hollow button">Load More</a>
                 </div>
             {% endif %}
         </div>

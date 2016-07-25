@@ -190,4 +190,9 @@ class WordPress
     {
         return get_post_type_archive_link($post_type);
     }
+
+    public function getOption($option, $default = false)
+    {
+        return get_option($option, $default);
+    }
 }
