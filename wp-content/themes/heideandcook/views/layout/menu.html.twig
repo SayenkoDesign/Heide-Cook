@@ -6,7 +6,7 @@
                 <a href="#quote-lightbox" class="light-green fancybox button quote">Get a Quote</a>
                 <div class="row column">
                     <div class="top-bar-left">
-                        <a href="tel:{{ SP.ACF.get_field('primary_number', 'option') }}"><i class="fa fa-phone"></i></a>
+                        <a href="tel:{{ SP.ACF.get_field('primary_number', 'option')|preg_replace('/[^0-9,]/', '') }}"><i class="fa fa-phone"></i></a>
                     </div>
                     <div class="top-bar-right">
                         <a data-toggle><i class="fa fa-bars"></i></a>
@@ -36,7 +36,7 @@
                 <div class="row column">
                     <ul class="horizontal menu">
                         <li><a href="{{ SP.ACF.get_field('customer_login_url', 'option') }}" class="login">Customer Login</a></li>
-                        <li><a href="tel:{{ SP.ACF.get_field('primary_number', 'option') }}" class="number">{{ SP.ACF.get_field('primary_number', 'option') }}</a></li>
+                        <li><a href="tel:{{ SP.ACF.get_field('primary_number', 'option')|preg_replace('/[^0-9,]/', '') }}" class="number">{{ SP.ACF.get_field('primary_number', 'option') }}</a></li>
                         <li><a href="#quote-lightbox" class="button fancybox">Get A Quote</a></li>
                     </ul>
                 </div>
@@ -88,3 +88,4 @@
         </div>
     </div>
 </div>
+<div class="menu-spacer"></div>

@@ -71,7 +71,7 @@ elseif(is_post_type_archive('case_studies') || is_tax('case_studies_tags')) {
     $loop = new \WP_Query([
         'post_type' => 'case_studies',
         'post_status' => 'publish',
-        'posts_per_page' => -1
+        'posts_per_page' => get_option('posts_per_page')
     ]);
     while($loop->have_posts()) {
         $loop->the_post();
