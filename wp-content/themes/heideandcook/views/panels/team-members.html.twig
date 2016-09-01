@@ -34,14 +34,16 @@
                             <a class="close" data-close></a>
                             <h2 class="dark-green">Professional Bio</h2>
                             {{ member.professional_bio }}
-                            <ul class="accordion" data-accordion data-allow-all-closed="true">
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title">Personal Bio</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        {{ member.personal_bio }}
-                                    </div>
-                                </li>
-                            </ul>
+                            {% if member.personal_bio %}
+                                <ul class="accordion" data-accordion data-allow-all-closed="true">
+                                    <li class="accordion-item" data-accordion-item>
+                                        <a href="#" class="accordion-title">Personal Bio</a>
+                                        <div class="accordion-content" data-tab-content>
+                                            {{ member.personal_bio }}
+                                        </div>
+                                    </li>
+                                </ul>
+                            {% endif %}
                         </div>
 
 
@@ -55,14 +57,16 @@
                             </div>
                             <h2 class="orange">Professional Bio</h2>
                             {{ member.professional_bio }}
-                            <ul class="accordion" data-accordion data-allow-all-closed="true">
-                                <li class="accordion-item" data-accordion-item>
-                                    <a href="#" class="accordion-title">Personal Bio</a>
-                                    <div class="accordion-content" data-tab-content>
-                                        {{ member.personal_bio }}
-                                    </div>
-                                </li>
-                            </ul>
+                            {% if member.personal_bio %}
+                                <ul class="accordion" data-accordion data-allow-all-closed="true">
+                                    <li class="accordion-item" data-accordion-item>
+                                        <a href="#" class="accordion-title">Personal Bio</a>
+                                        <div class="accordion-content" data-tab-content>
+                                            {{ member.personal_bio }}
+                                        </div>
+                                    </li>
+                                </ul>
+                            {% endif %}
                         </div>
                     {% endif %}
                 {% endfor %}

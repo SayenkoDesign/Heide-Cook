@@ -9,12 +9,14 @@
                 <a href="#" class="contact-scroll button">{{ SP.ACF.get_sub_field('button_text') }}</a>
             {% elseif SP.ACF.get_sub_field('button_type') == 'quote' %}
                 <a href="#quote-lightbox" class="fancybox button">{{ SP.ACF.get_sub_field('button_text') }}</a>
-            {% else %}
+            {% elseif SP.ACF.get_sub_field('button_type') == 'url' %}
                 <a href="{{ SP.ACF.get_sub_field('button_url') }}" class="button">{{ SP.ACF.get_sub_field('button_text') }}</a>
             {% endif %}
         </div>
         <div class="medium-6 large-8 columns">
-            <img src="{{ SP.ACF.get_sub_field('image').url }}" alt="{{ SP.ACF.get_sub_field('title') }}">
+            {% if SP.ACF.get_sub_field('image') %}
+                <img src="{{ SP.ACF.get_sub_field('image').url }}" alt="{{ SP.ACF.get_sub_field('title') }}">
+            {% endif %}
         </div>
     </div>
 </div>

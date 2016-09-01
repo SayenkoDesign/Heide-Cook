@@ -87,7 +87,7 @@
         margin: 0 auto rem-calc(8px) auto;
         @include breakpoint(medium) {
             display: inline-block;
-            max-height: 4rem;
+            max-height: 3.5rem;
             margin: rem-calc(8px);
             &:first-of-type {
                 margin-left: 0;

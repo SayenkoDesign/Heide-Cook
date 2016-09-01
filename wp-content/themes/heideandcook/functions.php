@@ -21,7 +21,8 @@ HTML;
     });
 
     add_filter('acf/load_field/name=submenu', function ($field) {
-        $menus = get_terms('nav_menu', array( 'hide_empty' => true ));
+        $menus = get_terms('nav_menu', array( 'hide_empty' => true, 'parent'   => 0 ));
+        $field['choices'] = [];
         $field['choices']['none'] = 'none';
         foreach($menus as $menu) {
             $field['choices'][$menu->term_taxonomy_id] = $menu->name;
