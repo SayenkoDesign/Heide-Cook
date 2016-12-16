@@ -8050,7 +8050,7 @@ form > .gform_footer > .gform_button.button:hover {
     /* line 135, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/layout/_menu.scss */
     #main-menu .bottom .large-logo img {
       margin-top: -2px;
-      height: 5.3125rem; }
+      max-height: 5.3125rem; }
   /* line 141, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/layout/_menu.scss */
   #main-menu .bottom .services a::after {
     content: "\f105";
