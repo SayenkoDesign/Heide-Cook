@@ -1,0 +1,22 @@
+<div class="footer centered">
+    <h1 class="green-header">{{ SP.ACF.get_field('footer_title', 'option') }}</h1>
+
+    <div class="footer-input">
+        {#{{ SP.WordPress.getForm(2) }}#}
+    </div>
+    <div class="social-media">
+        {% if SP.ACF.get_field('twitter', 'option') %}
+            <a href="{{ SP.ACF.get_field('twitter', 'option') }}" target="_blank"><i class="fa fa-twitter circle-icon" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if SP.ACF.get_field('linkedin', 'option') %}
+            <a href="{{ SP.ACF.get_field('linkedin', 'option') }}" target="_blank"><i class="fa fa-linkedin circle-icon" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if SP.ACF.get_field('youtube', 'option') %}
+            <a href="{{ SP.ACF.get_field('youtube', 'option') }}" target="_blank"><i class="fa fa-youtube circle-icon" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if SP.ACF.get_field('google_plus', 'option') %}
+            <a href="{{ SP.ACF.get_field('google_plus', 'option') }}" target="_blank"><i class="fa fa-google-plus circle-icon" aria-hidden="true"></i></a>
+        {% endif %}
+    </div>
+    <p class="copyright">{{ SP.ACF.get_field('footer_copyright', 'option') }}</p>
+</div>

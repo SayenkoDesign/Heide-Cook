@@ -1,0 +1,39 @@
+<section class="locations">
+    <div class="tabs-row">
+        <dl class="tabs" data-tabs id="location-tabs">
+            {% for location in SP.ACF.get_field('locations', 'option') %}
+                <dd class="tabs-title {% if loop.first %}is-active{% endif %}">
+                    <a href="#location-panel-{{ loop.index }}" aria-selected="true">{{ location.name }}</a>
+                </dd>
+            {% endfor %}
+        </dl>
+    </div>
+    <div class="tabs-content" data-tabs-content="location-tabs">
+        {% for location in SP.ACF.get_field('locations', 'option') %}
+            <div class="row location-info">
+                <div class="large-9 large-centered columns">
+                    <div class="tabs-panel {% if loop.first %}is-active{% endif %}" id="location-panel-{{ loop.index }}">
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <div class="phone">
+                                    {{ location.phone }}
+                                </div>
+                            </div>
+                            <div class="medium-4 columns">
+                                <div class="email">
+                                    {{ location.email }}
+                                </div>
+                            </div>
+                            <div class="medium-4 columns">
+                                <div class="address">
+                                    {{ location.address_line_1 }}<br />
+                                    {{ location.address_line_2 }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
