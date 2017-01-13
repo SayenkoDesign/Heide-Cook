@@ -21,7 +21,11 @@
                 <ul class="no-bullet">
                     <li><h6>{{ service.title }}</h6></li>
                     {% for link in service.links %}
-                        <li><a href="{{ SP.WordPress.URL(link.page) }}">{{ SP.WordPress.title(link.page) }}</a></li>
+                        {% if link.use_custom_link %}
+                            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                        {% elseif link.page %}
+                            <li><a href="{{ SP.WordPress.URL(link.page) }}">{{ SP.WordPress.title(link.page) }}</a></li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>

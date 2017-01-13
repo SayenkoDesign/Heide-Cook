@@ -15,13 +15,15 @@
                         </div>
                     {% endfor %}
                 </div>
-                <div class="testimonial text-center">
-                    <blockquote>
-                        <img src="{{ SP.ACF.get_field('testimony_image').url }}" alt="">
-                        {{ SP.ACF.get_field('testimony') }}
-                        <cite>{{ SP.ACF.get_field('testimony_author') }}</cite>
-                    </blockquote>
-                </div>
+                {% if SP.ACF.get_field('include_a_testimony') %}
+                    <div class="testimonial text-center">
+                        <blockquote>
+                            <img src="{{ SP.ACF.get_field('testimony_image').url }}" alt="">
+                            {{ SP.ACF.get_field('testimony') }}
+                            <cite>{{ SP.ACF.get_field('testimony_author') }}</cite>
+                        </blockquote>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

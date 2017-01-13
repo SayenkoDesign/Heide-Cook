@@ -136,7 +136,23 @@ jQuery(document).ready(function(){
         e.preventDefault();
         e.defaultPrevented;
         return false;
-    })
+    });
+
+    jQuery('.horizontal-menu a').filter(function(){
+        var path = window.location.pathname;
+        var href = jQuery(this).attr("href");
+        var href_path = href.substring(0, href.indexOf('#'));
+        return href_path === path;
+    }).on('click', function(e){
+        var href= jQuery(this).attr('href');
+        var id = href.substr(href.indexOf("#"));
+        console.log(id);
+        jQuery('html, body').animate({
+            scrollTop: jQuery(id).offset().top - 150
+    }, 2000);
+        e.preventDefault();
+        return false;
+    });
 });
 
 

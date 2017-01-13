@@ -77,7 +77,9 @@
                         <ul class="vertical menu">
                             <li><p>{{ menu.title }}</p></li>
                             {% for link in menu.links %}
-                                {% if link.page %}
+                                {% if link.use_custom_url %}
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                {% elseif link.page %}
                                     <li><a href="{{ SP.WordPress.URL(link.page.ID) }}">{{ link.page.post_title }}</a></li>
                                 {% endif %}
                             {% endfor %}

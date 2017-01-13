@@ -8996,28 +8996,32 @@ select {
 .no-js .top-bar {
   display: none; }
 
+/* line 37, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+.no-js #mobile-menu {
+  display: none; }
+
 @media screen and (min-width: 40em) {
-  /* line 39, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+  /* line 42, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
   .no-js .top-bar {
     display: block; }
-  /* line 43, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+  /* line 46, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
   .no-js .title-bar {
     display: none; } }
 
-/* line 48, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+/* line 51, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
 .accordion {
   background: none;
   color: #db8835; }
-  /* line 51, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+  /* line 54, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
   .accordion .accordion-title::before {
     content: url("../images/expand.png");
     left: -35px;
     top: 1.25rem; }
-  /* line 56, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+  /* line 59, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
   .accordion .is-active .accordion-title::before {
     content: url("../images/expand-open.png"); }
 
-/* line 61, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+/* line 64, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
 a.accordion-title {
   color: #db8835;
   font-size: 1.125rem;
@@ -9028,11 +9032,11 @@ a.accordion-title {
   border: none !important;
   background-color: transparent !important;
   line-height: 1.5; }
-  /* line 71, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+  /* line 74, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
   a.accordion-title:hover {
     background-color: transparent !important; }
 
-/* line 76, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+/* line 79, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
 .accordion-content {
   position: relative;
   background: none;
@@ -9040,10 +9044,10 @@ a.accordion-title {
   padding: 0;
   padding-left: 1rem;
   border: none !important; }
-  /* line 84, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+  /* line 87, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
   .accordion-content p {
     margin: 0 1.875rem 1.25rem 1.5rem; }
 
-/* line 89, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
+/* line 92, c:/xampp/htdocs/heide-cook/wp-content/themes/heideandcook/web/sass/app.scss */
 .content-404 {
   padding: 4rem 0; }

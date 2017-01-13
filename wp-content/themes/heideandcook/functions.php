@@ -114,3 +114,7 @@ function post_love_add_love() {
     require_once __DIR__.'/ajax.php';
     die();
 }
+
+add_filter('wpseo_metabox_prio', function() {
+    return 'low';
+});
