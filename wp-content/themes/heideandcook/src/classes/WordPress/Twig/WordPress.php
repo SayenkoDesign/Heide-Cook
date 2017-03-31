@@ -38,6 +38,11 @@ class WordPress
         return $title;
     }
 
+    public function wp_title()
+    {
+        return wp_title('', false);
+    }
+
     public function archiveTitle()
     {
         return get_the_archive_title();
