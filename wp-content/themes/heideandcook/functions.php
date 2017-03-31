@@ -39,8 +39,8 @@ add_action('wp_enqueue_scripts', function() {
         'Cabin'
     ]);
 
-    wp_register_script('sharethis', 'http://w.sharethis.com/button/buttons.js', [], false, true);
-    wp_register_script('youtube', 'http://www.youtube.com/player_api', [], false, true);
+    wp_register_script('sharethis', 'https://ws.sharethis.com/button/buttons.js', [], false, true);
+    wp_register_script('youtube', 'https://www.youtube.com/player_api', [], false, true);
     wp_register_script('app_script', get_template_directory_uri() . '/web/scripts-min/app.min.js', ['jquery', 'sharethis', 'youtube'], false, true);
 
 
